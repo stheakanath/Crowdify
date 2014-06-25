@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <Spotify/Spotify.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    UIScrollView *tableviewscroll;
+    UITableView *playlistitems;
+}
 
 -(void)handleNewSession:(SPTSession *)session;
 

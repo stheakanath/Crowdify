@@ -19,6 +19,7 @@ static NSString * const kSessionUserDefaultsKey = @"SpotifySession";
 
 @implementation AppDelegate
 
+
 -(void)enableAudioPlaybackWithSession:(SPTSession *)session {
     NSData *sessionData = [NSKeyedArchiver archivedDataWithRootObject:session];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -26,11 +27,15 @@ static NSString * const kSessionUserDefaultsKey = @"SpotifySession";
     [userDefaults synchronize];
     ViewController *viewController = (ViewController *)self.window.rootViewController;
     [viewController handleNewSession:session];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [self.window addSubview:self.navigationController.view];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+
     
     id sessionData = [[NSUserDefaults standardUserDefaults] objectForKey:kSessionUserDefaultsKey];
     SPTSession *session = sessionData ? [NSKeyedUnarchiver unarchiveObjectWithData:sessionData] : nil;
@@ -65,6 +70,7 @@ static NSString * const kSessionUserDefaultsKey = @"SpotifySession";
     
     return YES;
 }
+
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     

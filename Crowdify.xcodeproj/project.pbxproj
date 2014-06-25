@@ -132,15 +132,9 @@
 			children = (
 				EBA944FB1958EB0E00F8B254 /* AppDelegate.h */,
 				EBA944FC1958EB0E00F8B254 /* AppDelegate.m */,
-				EBA944FE1958EB0E00F8B254 /* Main.storyboard */,
 				EBA945011958EB0E00F8B254 /* ViewController.h */,
 				EBA945021958EB0E00F8B254 /* ViewController.m */,
-				EBC4AD6D195B44BF00E7017F /* SpotifyButton.h */,
-				EBF71E57195B51A90048DE07 /* InterfaceText.h */,
-				EBF71E58195B51A90048DE07 /* InterfaceText.m */,
-				EBC4AD6E195B44BF00E7017F /* SpotifyButton.m */,
-				EBA945231958F0AB00F8B254 /* buttonbackground@2x.png */,
-				EBA945041958EB0E00F8B254 /* Images.xcassets */,
+				EBF71E5A195B57280048DE07 /* Interface Files */,
 				EBA944F31958EB0E00F8B254 /* Supporting Files */,
 			);
 			path = Crowdify;
@@ -174,6 +168,28 @@
 				EBA945141958EB0E00F8B254 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBF71E5A195B57280048DE07 /* Interface Files */ = {
+			isa = PBXGroup;
+			children = (
+				EBF71E5B195B57360048DE07 /* Images */,
+				EBF71E57195B51A90048DE07 /* InterfaceText.h */,
+				EBF71E58195B51A90048DE07 /* InterfaceText.m */,
+				EBC4AD6D195B44BF00E7017F /* SpotifyButton.h */,
+				EBC4AD6E195B44BF00E7017F /* SpotifyButton.m */,
+				EBA944FE1958EB0E00F8B254 /* Main.storyboard */,
+			);
+			name = "Interface Files";
+			sourceTree = "<group>";
+		};
+		EBF71E5B195B57360048DE07 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EBA945041958EB0E00F8B254 /* Images.xcassets */,
+				EBA945231958F0AB00F8B254 /* buttonbackground@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
