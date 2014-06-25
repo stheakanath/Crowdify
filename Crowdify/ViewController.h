@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Spotify/Spotify.h>
 
 @interface ViewController : UIViewController
+
+-(void)handleNewSession:(SPTSession *)session;
 
 @end
