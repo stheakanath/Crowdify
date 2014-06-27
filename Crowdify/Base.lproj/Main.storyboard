@@ -23,6 +23,41 @@
             </objects>
             <point key="canvasLocation" x="306" y="62"/>
         </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="tuK-xB-pfb">
+            <objects>
+                <viewController storyboardIdentifier="PageContentViewController" id="Ndr-VQ-Jg1" customClass="PageContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pAH-O8-S0s"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zsy-TV-IoE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="833-6M-qjw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="znM-8g-QwF">
+                                <rect key="frame" x="53" y="114" width="214" height="214"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="znM-8g-QwF" id="uwW-hQ-wwV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uup-KH-gZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="779" y="389"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="ccg-J8-38T">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="sUi-y5-1Tu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cdV-Qq-njR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="779" y="-278"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

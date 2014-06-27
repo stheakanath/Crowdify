@@ -10,6 +10,7 @@
 #import "SpotifyButton.h"
 #import "AudioController.h"
 #import "InterfaceText.h"
+#import "PageContentViewController.h"
 
 @interface ViewController () <SPTTrackPlayerDelegate>
 
@@ -136,20 +137,7 @@
 
 - (void) setUpInterface {
     self.view.backgroundColor = [UIColor blackColor];
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
-    
     [self setUpNavigationController];
-    
-    _linkspotifybutton = [[SpotifyButton alloc] initWithFrame:CGRectMake(80.0, 210.0, 160.0, 40.0)];
-    [_linkspotifybutton setTitle:@"Link Spotify" forState:UIControlStateNormal];
-    [self.view addSubview:_linkspotifybutton];
-    
-    _linkomletbutton = [[SpotifyButton alloc] initWithFrame:CGRectMake(80.0, 300.0, 160.0, 40.0)];
-    [_linkomletbutton setTitle:@"Link Omlet" forState:UIControlStateNormal];
-    [self.view addSubview:_linkomletbutton];
-    
     if([self.session isValid]) {
         [self moveToPlaylistScreen];
     }
@@ -177,7 +165,85 @@
     [self setNeedsStatusBarAppearanceUpdate];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    _pageImages = @[@"page1.png", @"page2.png"];
+    
+    // Create page view controller
+    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+    self.pageViewController.dataSource = self;
+    
+    PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
+    NSArray *viewControllers = @[startingViewController];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    // Change the size of page view controller
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
+    
+    [self addChildViewController:_pageViewController];
+    [self.view addSubview:_pageViewController.view];
+    [self.pageViewController didMoveToParentViewController:self];
 }
+
+- (IBAction)startWalkthrough:(id)sender {
+    PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
+    NSArray *viewControllers = @[startingViewController];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+    [self.titleLabel setFont:[UIFont fontWithName:@"ProximaNova-Regular" size:18.0]];
+}
+
+- (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
+{
+    if (([self.pageImages count] == 0) || (index >= [self.pageImages count])) {
+        return nil;
+    }
+    
+    // Create a new view controller and pass suitable data.
+    PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+    pageContentViewController.imageFile = self.pageImages[index];
+    pageContentViewController.pageIndex = index;
+    
+    return pageContentViewController;
+}
+
+#pragma mark - Page View Controller Data Source
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+{
+    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
+    
+    if ((index == 0) || (index == NSNotFound)) {
+        return nil;
+    }
+    
+    index--;
+    return [self viewControllerAtIndex:index];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
+    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
+    
+    if (index == NSNotFound) {
+        return nil;
+    }
+    
+    index++;
+    if (index == [self.pageImages count]) {
+        return nil;
+    }
+    return [self viewControllerAtIndex:index];
+}
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+{
+    return [self.pageImages count];
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+    return 0;
+}
+
 
 -(UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;

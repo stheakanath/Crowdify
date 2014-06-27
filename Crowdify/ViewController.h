@@ -9,11 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <Spotify/Spotify.h>
 
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIPageViewControllerDataSource> {
     UIScrollView *tableviewscroll;
     UITableView *playlistitems;
 }
 
 -(void)handleNewSession:(SPTSession *)session;
+- (IBAction)startWalkthrough:(id)sender;
+
+@property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) NSArray *pageImages;
 
 @end

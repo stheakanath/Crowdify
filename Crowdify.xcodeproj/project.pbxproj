@@ -28,6 +28,9 @@
 		EBA945221958ED8400F8B254 /* Proxima.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBA945211958ED8400F8B254 /* Proxima.otf */; };
 		EBA945241958F0AB00F8B254 /* buttonbackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA945231958F0AB00F8B254 /* buttonbackground@2x.png */; };
 		EBC4AD6F195B44BF00E7017F /* SpotifyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4AD6E195B44BF00E7017F /* SpotifyButton.m */; };
+		EBD02AD8195CFC51004DB105 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD02AD7195CFC51004DB105 /* PageContentViewController.m */; };
+		EBD02ADA195D035C004DB105 /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD02AD9195D035C004DB105 /* page2.png */; };
+		EBD02ADC195D0374004DB105 /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD02ADB195D0374004DB105 /* page1.png */; };
 		EBF71E54195B49290048DE07 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF71E53195B49290048DE07 /* AVFoundation.framework */; };
 		EBF71E56195B49A60048DE07 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF71E55195B49A60048DE07 /* Spotify.framework */; };
 		EBF71E59195B51A90048DE07 /* InterfaceText.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF71E58195B51A90048DE07 /* InterfaceText.m */; };
@@ -72,6 +75,10 @@
 		EBA945231958F0AB00F8B254 /* buttonbackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonbackground@2x.png"; sourceTree = "<group>"; };
 		EBC4AD6D195B44BF00E7017F /* SpotifyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotifyButton.h; sourceTree = "<group>"; };
 		EBC4AD6E195B44BF00E7017F /* SpotifyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotifyButton.m; sourceTree = "<group>"; };
+		EBD02AD6195CFC51004DB105 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		EBD02AD7195CFC51004DB105 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		EBD02AD9195D035C004DB105 /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
+		EBD02ADB195D0374004DB105 /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
 		EBF71E53195B49290048DE07 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EBF71E55195B49A60048DE07 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spotify.framework; path = "../../ios-sdk-master/Spotify.framework"; sourceTree = "<group>"; };
 		EBF71E57195B51A90048DE07 /* InterfaceText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceText.h; sourceTree = "<group>"; };
@@ -191,6 +198,8 @@
 				EB82E94D195CCD3A004D18DC /* AudioController.m */,
 				EBC4AD6D195B44BF00E7017F /* SpotifyButton.h */,
 				EBC4AD6E195B44BF00E7017F /* SpotifyButton.m */,
+				EBD02AD6195CFC51004DB105 /* PageContentViewController.h */,
+				EBD02AD7195CFC51004DB105 /* PageContentViewController.m */,
 				EBA944FE1958EB0E00F8B254 /* Main.storyboard */,
 			);
 			name = "Interface Files";
@@ -199,6 +208,8 @@
 		EBF71E5B195B57360048DE07 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EBD02ADB195D0374004DB105 /* page1.png */,
+				EBD02AD9195D035C004DB105 /* page2.png */,
 				EBA945041958EB0E00F8B254 /* Images.xcassets */,
 				EBA945231958F0AB00F8B254 /* buttonbackground@2x.png */,
 				EB82E951195CE829004D18DC /* pausebutton@2x.png */,
@@ -286,7 +297,9 @@
 				EBA945051958EB0E00F8B254 /* Images.xcassets in Resources */,
 				EB82E953195CE829004D18DC /* pausebutton@2x.png in Resources */,
 				EBA944F71958EB0E00F8B254 /* InfoPlist.strings in Resources */,
+				EBD02ADA195D035C004DB105 /* page2.png in Resources */,
 				EBA945221958ED8400F8B254 /* Proxima.otf in Resources */,
+				EBD02ADC195D0374004DB105 /* page1.png in Resources */,
 				EBA945001958EB0E00F8B254 /* Main.storyboard in Resources */,
 				EB82E954195CE829004D18DC /* playbutton@2x.png in Resources */,
 				EBA945241958F0AB00F8B254 /* buttonbackground@2x.png in Resources */,
@@ -310,6 +323,7 @@
 			files = (
 				EB82E94E195CCD3A004D18DC /* AudioController.m in Sources */,
 				EBC4AD6F195B44BF00E7017F /* SpotifyButton.m in Sources */,
+				EBD02AD8195CFC51004DB105 /* PageContentViewController.m in Sources */,
 				EBF71E59195B51A90048DE07 /* InterfaceText.m in Sources */,
 				EBA945031958EB0E00F8B254 /* ViewController.m in Sources */,
 				EBA944FD1958EB0E00F8B254 /* AppDelegate.m in Sources */,
