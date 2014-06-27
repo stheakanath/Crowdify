@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB4D71A7195B906300BB774D /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4D71A6195B906300BB774D /* Spotify.framework */; };
+		EB82E94E195CCD3A004D18DC /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB82E94D195CCD3A004D18DC /* AudioController.m */; };
+		EB82E953195CE829004D18DC /* pausebutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB82E951195CE829004D18DC /* pausebutton@2x.png */; };
+		EB82E954195CE829004D18DC /* playbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB82E952195CE829004D18DC /* playbutton@2x.png */; };
 		EBA944ED1958EB0E00F8B254 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA944EC1958EB0E00F8B254 /* Foundation.framework */; };
 		EBA944EF1958EB0E00F8B254 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA944EE1958EB0E00F8B254 /* CoreGraphics.framework */; };
 		EBA944F11958EB0E00F8B254 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA944F01958EB0E00F8B254 /* UIKit.framework */; };
@@ -40,6 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB4D71A6195B906300BB774D /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		EB82E94C195CCD3A004D18DC /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
+		EB82E94D195CCD3A004D18DC /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
+		EB82E951195CE829004D18DC /* pausebutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pausebutton@2x.png"; sourceTree = "<group>"; };
+		EB82E952195CE829004D18DC /* playbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playbutton@2x.png"; sourceTree = "<group>"; };
 		EBA944E91958EB0E00F8B254 /* Crowdify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crowdify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA944EC1958EB0E00F8B254 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBA944EE1958EB0E00F8B254 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4D71A7195B906300BB774D /* Spotify.framework in Frameworks */,
 				EBF71E56195B49A60048DE07 /* Spotify.framework in Frameworks */,
 				EBF71E54195B49290048DE07 /* AVFoundation.framework in Frameworks */,
 				EBA944EF1958EB0E00F8B254 /* CoreGraphics.framework in Frameworks */,
@@ -117,6 +127,7 @@
 		EBA944EB1958EB0E00F8B254 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB4D71A6195B906300BB774D /* Spotify.framework */,
 				EBF71E55195B49A60048DE07 /* Spotify.framework */,
 				EBF71E53195B49290048DE07 /* AVFoundation.framework */,
 				EBA944EC1958EB0E00F8B254 /* Foundation.framework */,
@@ -176,6 +187,8 @@
 				EBF71E5B195B57360048DE07 /* Images */,
 				EBF71E57195B51A90048DE07 /* InterfaceText.h */,
 				EBF71E58195B51A90048DE07 /* InterfaceText.m */,
+				EB82E94C195CCD3A004D18DC /* AudioController.h */,
+				EB82E94D195CCD3A004D18DC /* AudioController.m */,
 				EBC4AD6D195B44BF00E7017F /* SpotifyButton.h */,
 				EBC4AD6E195B44BF00E7017F /* SpotifyButton.m */,
 				EBA944FE1958EB0E00F8B254 /* Main.storyboard */,
@@ -188,6 +201,8 @@
 			children = (
 				EBA945041958EB0E00F8B254 /* Images.xcassets */,
 				EBA945231958F0AB00F8B254 /* buttonbackground@2x.png */,
+				EB82E951195CE829004D18DC /* pausebutton@2x.png */,
+				EB82E952195CE829004D18DC /* playbutton@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -269,9 +284,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBA945051958EB0E00F8B254 /* Images.xcassets in Resources */,
+				EB82E953195CE829004D18DC /* pausebutton@2x.png in Resources */,
 				EBA944F71958EB0E00F8B254 /* InfoPlist.strings in Resources */,
 				EBA945221958ED8400F8B254 /* Proxima.otf in Resources */,
 				EBA945001958EB0E00F8B254 /* Main.storyboard in Resources */,
+				EB82E954195CE829004D18DC /* playbutton@2x.png in Resources */,
 				EBA945241958F0AB00F8B254 /* buttonbackground@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB82E94E195CCD3A004D18DC /* AudioController.m in Sources */,
 				EBC4AD6F195B44BF00E7017F /* SpotifyButton.m in Sources */,
 				EBF71E59195B51A90048DE07 /* InterfaceText.m in Sources */,
 				EBA945031958EB0E00F8B254 /* ViewController.m in Sources */,
@@ -426,6 +444,7 @@
 					Files/Stanford,
 					Mobisocial,
 					"Lab/ios-sdk-master",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crowdify/Crowdify-Prefix.pch";
@@ -448,6 +467,7 @@
 					Files/Stanford,
 					Mobisocial,
 					"Lab/ios-sdk-master",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crowdify/Crowdify-Prefix.pch";

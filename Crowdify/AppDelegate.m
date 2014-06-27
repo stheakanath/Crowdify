@@ -17,6 +17,9 @@ static NSString * const kTokenRefreshServiceURL = @"http://localhost:1234/refres
 
 static NSString * const kSessionUserDefaultsKey = @"SpotifySession";
 
+
+ViewController *viewController;
+
 @implementation AppDelegate
 
 
@@ -25,17 +28,17 @@ static NSString * const kSessionUserDefaultsKey = @"SpotifySession";
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:sessionData forKey:kSessionUserDefaultsKey];
     [userDefaults synchronize];
-    ViewController *viewController = (ViewController *)self.window.rootViewController;
+
     [viewController handleNewSession:session];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    [self.window addSubview:self.navigationController.view];
+
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
-
+    viewController = (ViewController *)self.window.rootViewController;
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [self.window addSubview:self.navigationController.view];
     
     id sessionData = [[NSUserDefaults standardUserDefaults] objectForKey:kSessionUserDefaultsKey];
     SPTSession *session = sessionData ? [NSKeyedUnarchiver unarchiveObjectWithData:sessionData] : nil;

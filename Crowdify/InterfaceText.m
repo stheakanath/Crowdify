@@ -10,30 +10,19 @@
 
 @implementation InterfaceText
 
-- (id)initWithFrame:(CGRect)frame initwithFontSize:(CGFloat)fontsize initWithLabelText:(NSString*)text
-{
+- (id)initWithFrame:(CGRect)frame initwithFontSize:(CGFloat)fontsize initWithLabelText:(NSString*)text initwithFormatting:(NSTextAlignment)textalignment withColor:(UIColor*)color{
     self = [super initWithFrame:frame];
     if (self) {
         [self setBackgroundColor:[UIColor clearColor]];
         [self setFont:[UIFont fontWithName:@"ProximaNova-Regular" size:fontsize]];
         [self setText:text];
-        [self setTextAlignment:NSTextAlignmentCenter];
-        [self setTextColor:[UIColor whiteColor]];
+        [self setTextAlignment:textalignment];
+        [self setTextColor:color];
         [self setShadowColor:[UIColor blackColor]];
         [self setShadowOffset:CGSizeMake(1, 0)];
-        self.lineBreakMode = NSLineBreakByWordWrapping;
-        self.numberOfLines = 0;
+        self.numberOfLines = 1;
     }
     return self;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

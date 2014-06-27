@@ -10,6 +10,6 @@
 
 @interface InterfaceText : UILabel
 
-- (id)initWithFrame:(CGRect)frame initwithFontSize:(CGFloat)fontsize initWithLabelText:(NSString*)text;
+- (id)initWithFrame:(CGRect)frame initwithFontSize:(CGFloat)fontsize initWithLabelText:(NSString*)text initwithFormatting:(NSTextAlignment)textalignment withColor:(UIColor*)color;
 
 @end
