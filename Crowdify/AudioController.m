@@ -8,13 +8,13 @@
 
 #import "AudioController.h"
 #import "InterfaceText.h"
+#import "ViewController.h"
 
 
 @interface AudioController () <SPTTrackPlayerDelegate>
 
 @property (nonatomic, strong) SPTTrackPlayer *trackPlayer;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-
 @property (strong, nonatomic) IBOutlet UIImageView *coverView;
 @property (strong, nonatomic) IBOutlet InterfaceText *songname;
 @property (strong, nonatomic) IBOutlet InterfaceText *artistname;
@@ -29,6 +29,8 @@ CGFloat screenHeight;
 
 
 @implementation AudioController
+
+#pragma mark - Interface Methods
 
 - (id)initWithFrame:(CGRect)frame initWithPlayer: (SPTTrackPlayer*)player
 {
@@ -53,9 +55,19 @@ CGFloat screenHeight;
     return self;
 }
 
+- (void) createPlayButton {
+    pauseorplay = TRUE;
+    _playbutton = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth-40, 10, 30, 30)];
+    UIImage *btnImage = [UIImage imageNamed:@"pausebutton.png"];
+    [_playbutton addTarget:self action:@selector(clickpause:) forControlEvents:UIControlEventTouchUpInside];
+    [_playbutton setImage:btnImage forState:UIControlStateNormal];
+    [self addSubview:_playbutton];
+}
+
+#pragma mark - Track Player Methods
+
 -(void)trackPlayer:(SPTTrackPlayer *)player didStartPlaybackOfTrackAtIndex:(NSInteger)index ofProvider:(id <SPTTrackProvider>)provider {
-    NSLog(@"next song");
-	[self updateAudioPlayer];
+    [self updateAudioPlayer];
 }
 
 - (void) updateAudioPlayer {
@@ -69,15 +81,10 @@ CGFloat screenHeight;
         _coverView.image = nil;
         [_trackPlayer skipToNextTrack];
     } else {
-
-        //Name
         [_songname setText:currenttrack.name];
         [_artistname setText:[NSString stringWithFormat:@"%@ | %@", currenttrack.name, currenttrack.album.name]];
         [self.spinner startAnimating];
-        
-        // Pop over to a background queue to load the image over the network.
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
             NSError *error = nil;
             UIImage *image = nil;
             NSData *imageData = [NSData dataWithContentsOfURL:imageURL options:0 error:&error];
@@ -85,8 +92,6 @@ CGFloat screenHeight;
             if (imageData != nil) {
                 image = [UIImage imageWithData:imageData];
             }
-            
-            // …and back to the main queue to display the image.
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.spinner stopAnimating];
                 _coverView.image = image;
@@ -96,17 +101,9 @@ CGFloat screenHeight;
             });
         });
     }
-
 }
 
-- (void) createPlayButton {
-    pauseorplay = TRUE;
-    _playbutton = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth-40, 10, 30, 30)];
-    UIImage *btnImage = [UIImage imageNamed:@"pausebutton.png"];
-    [_playbutton addTarget:self action:@selector(clickpause:) forControlEvents:UIControlEventTouchUpInside];
-    [_playbutton setImage:btnImage forState:UIControlStateNormal];
-    [self addSubview:_playbutton];
-}
+#pragma mark - Actions
 
 - (IBAction)clickpause:(id)sender {
     if(pauseorplay == TRUE) {

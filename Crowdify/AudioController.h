@@ -12,5 +12,6 @@
 @interface AudioController : UIView
 
 - (id)initWithFrame:(CGRect)frame initWithPlayer: (SPTTrackPlayer*)player;
+- (void) updateAudioPlayer;
 
 @end

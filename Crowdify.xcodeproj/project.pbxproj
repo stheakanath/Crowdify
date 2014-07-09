@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB4D71A7195B906300BB774D /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4D71A6195B906300BB774D /* Spotify.framework */; };
+		EB0B1953196DC76A00F7677A /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0B1952196DC76A00F7677A /* Spotify.framework */; };
+		EB16EC61196CF2930028C0EE /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16EC60196CF2930028C0EE /* SongCell.m */; };
+		EB1C7454196CA2340049C1BB /* AddSongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1C7453196CA2340049C1BB /* AddSongTableViewController.m */; };
 		EB82E94E195CCD3A004D18DC /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB82E94D195CCD3A004D18DC /* AudioController.m */; };
 		EB82E953195CE829004D18DC /* pausebutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB82E951195CE829004D18DC /* pausebutton@2x.png */; };
 		EB82E954195CE829004D18DC /* playbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB82E952195CE829004D18DC /* playbutton@2x.png */; };
+		EB9F09291965D41900539BBE /* RefresherView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F09281965D41900539BBE /* RefresherView.m */; };
 		EBA944ED1958EB0E00F8B254 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA944EC1958EB0E00F8B254 /* Foundation.framework */; };
 		EBA944EF1958EB0E00F8B254 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA944EE1958EB0E00F8B254 /* CoreGraphics.framework */; };
 		EBA944F11958EB0E00F8B254 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA944F01958EB0E00F8B254 /* UIKit.framework */; };
@@ -32,7 +35,6 @@
 		EBD02ADA195D035C004DB105 /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD02AD9195D035C004DB105 /* page2.png */; };
 		EBD02ADC195D0374004DB105 /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD02ADB195D0374004DB105 /* page1.png */; };
 		EBF71E54195B49290048DE07 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF71E53195B49290048DE07 /* AVFoundation.framework */; };
-		EBF71E56195B49A60048DE07 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF71E55195B49A60048DE07 /* Spotify.framework */; };
 		EBF71E59195B51A90048DE07 /* InterfaceText.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF71E58195B51A90048DE07 /* InterfaceText.m */; };
 /* End PBXBuildFile section */
 
@@ -47,11 +49,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB4D71A6195B906300BB774D /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		EB0B1952196DC76A00F7677A /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spotify.framework; path = Crowdify/Spotify.framework; sourceTree = "<group>"; };
+		EB16EC5F196CF2930028C0EE /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
+		EB16EC60196CF2930028C0EE /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
+		EB1C7452196CA2340049C1BB /* AddSongTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddSongTableViewController.h; path = ../AddSongTableViewController.h; sourceTree = "<group>"; };
+		EB1C7453196CA2340049C1BB /* AddSongTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddSongTableViewController.m; path = ../AddSongTableViewController.m; sourceTree = "<group>"; };
 		EB82E94C195CCD3A004D18DC /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
 		EB82E94D195CCD3A004D18DC /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
 		EB82E951195CE829004D18DC /* pausebutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pausebutton@2x.png"; sourceTree = "<group>"; };
 		EB82E952195CE829004D18DC /* playbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playbutton@2x.png"; sourceTree = "<group>"; };
+		EB9F09271965D41900539BBE /* RefresherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefresherView.h; sourceTree = "<group>"; };
+		EB9F09281965D41900539BBE /* RefresherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefresherView.m; sourceTree = "<group>"; };
 		EBA944E91958EB0E00F8B254 /* Crowdify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crowdify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA944EC1958EB0E00F8B254 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBA944EE1958EB0E00F8B254 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,7 +88,6 @@
 		EBD02AD9195D035C004DB105 /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
 		EBD02ADB195D0374004DB105 /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
 		EBF71E53195B49290048DE07 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		EBF71E55195B49A60048DE07 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spotify.framework; path = "../../ios-sdk-master/Spotify.framework"; sourceTree = "<group>"; };
 		EBF71E57195B51A90048DE07 /* InterfaceText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceText.h; sourceTree = "<group>"; };
 		EBF71E58195B51A90048DE07 /* InterfaceText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceText.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,8 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB4D71A7195B906300BB774D /* Spotify.framework in Frameworks */,
-				EBF71E56195B49A60048DE07 /* Spotify.framework in Frameworks */,
+				EB0B1953196DC76A00F7677A /* Spotify.framework in Frameworks */,
 				EBF71E54195B49290048DE07 /* AVFoundation.framework in Frameworks */,
 				EBA944EF1958EB0E00F8B254 /* CoreGraphics.framework in Frameworks */,
 				EBA944F11958EB0E00F8B254 /* UIKit.framework in Frameworks */,
@@ -134,8 +140,7 @@
 		EBA944EB1958EB0E00F8B254 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB4D71A6195B906300BB774D /* Spotify.framework */,
-				EBF71E55195B49A60048DE07 /* Spotify.framework */,
+				EB0B1952196DC76A00F7677A /* Spotify.framework */,
 				EBF71E53195B49290048DE07 /* AVFoundation.framework */,
 				EBA944EC1958EB0E00F8B254 /* Foundation.framework */,
 				EBA944EE1958EB0E00F8B254 /* CoreGraphics.framework */,
@@ -192,14 +197,20 @@
 			isa = PBXGroup;
 			children = (
 				EBF71E5B195B57360048DE07 /* Images */,
+				EB9F09271965D41900539BBE /* RefresherView.h */,
+				EB9F09281965D41900539BBE /* RefresherView.m */,
 				EBF71E57195B51A90048DE07 /* InterfaceText.h */,
 				EBF71E58195B51A90048DE07 /* InterfaceText.m */,
+				EB16EC5F196CF2930028C0EE /* SongCell.h */,
+				EB16EC60196CF2930028C0EE /* SongCell.m */,
 				EB82E94C195CCD3A004D18DC /* AudioController.h */,
 				EB82E94D195CCD3A004D18DC /* AudioController.m */,
 				EBC4AD6D195B44BF00E7017F /* SpotifyButton.h */,
 				EBC4AD6E195B44BF00E7017F /* SpotifyButton.m */,
 				EBD02AD6195CFC51004DB105 /* PageContentViewController.h */,
 				EBD02AD7195CFC51004DB105 /* PageContentViewController.m */,
+				EB1C7452196CA2340049C1BB /* AddSongTableViewController.h */,
+				EB1C7453196CA2340049C1BB /* AddSongTableViewController.m */,
 				EBA944FE1958EB0E00F8B254 /* Main.storyboard */,
 			);
 			name = "Interface Files";
@@ -324,6 +335,9 @@
 				EB82E94E195CCD3A004D18DC /* AudioController.m in Sources */,
 				EBC4AD6F195B44BF00E7017F /* SpotifyButton.m in Sources */,
 				EBD02AD8195CFC51004DB105 /* PageContentViewController.m in Sources */,
+				EB1C7454196CA2340049C1BB /* AddSongTableViewController.m in Sources */,
+				EB16EC61196CF2930028C0EE /* SongCell.m in Sources */,
+				EB9F09291965D41900539BBE /* RefresherView.m in Sources */,
 				EBF71E59195B51A90048DE07 /* InterfaceText.m in Sources */,
 				EBA945031958EB0E00F8B254 /* ViewController.m in Sources */,
 				EBA944FD1958EB0E00F8B254 /* AppDelegate.m in Sources */,
@@ -454,11 +468,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Sony/Dropbox/Internship,
-					Files/Stanford,
-					Mobisocial,
-					"Lab/ios-sdk-master",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Crowdify",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crowdify/Crowdify-Prefix.pch";
@@ -477,11 +488,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Sony/Dropbox/Internship,
-					Files/Stanford,
-					Mobisocial,
-					"Lab/ios-sdk-master",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Crowdify",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crowdify/Crowdify-Prefix.pch";
