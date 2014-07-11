@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "PlaylistViewController.h"
 #import <Spotify/Spotify.h>
-#import "ViewController.h"
 
 static NSString * const kClientId = @"6f1f14410267442598d834882582dd65";
 static NSString * const kCallbackURL = @"crowdify-iphone-app://callback";
@@ -17,14 +17,21 @@ static NSString * const kTokenRefreshServiceURL = @"http://localhost:1234/refres
 
 static NSString * const kSessionUserDefaultsKey = @"SpotifySession";
 
-ViewController *viewController;
+PlaylistViewController *viewController;
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    viewController = (ViewController *)self.window.rootViewController;
+    viewController = (PlaylistViewController *)self.window.rootViewController;
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    NSShadow *shadow = [NSShadow new];
+    [shadow setShadowColor: [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
+    [shadow setShadowOffset: CGSizeMake(0.0f, -1.0f)];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor], NSShadowAttributeName:shadow, NSFontAttributeName:[UIFont fontWithName:@"ProximaNova-Regular" size:18.0] };
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:23/255.0f green:23/255.0f blue:23/255.0f alpha:1.0f];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [self.window addSubview:self.navigationController.view];
+    
     [[self.navigationController navigationBar] setTintColor:[UIColor whiteColor]];
     
     id sessionData = [[NSUserDefaults standardUserDefaults] objectForKey:kSessionUserDefaultsKey];
@@ -32,35 +39,28 @@ ViewController *viewController;
     SPTAuth *auth = [SPTAuth defaultInstance];
     if (session) {
         if ([session isValid]) {
-            NSLog(@"%@", session.accessToken);
             [viewController addTheSession:session];
             [viewController handleNewSession:session];
         } else {
-            NSLog(@"me");
             [auth renewSession:session withServiceEndpointAtURL:[NSURL URLWithString:kTokenRefreshServiceURL] callback:^(NSError *error, SPTSession *session) {
                 if (error) {
                     NSLog(@"*** Error renewing session: %@", error);
                     return;
                 }
-
-                [viewController addTheSession:session];
-                [viewController handleNewSession:session];
+            [viewController addTheSession:session];
+            [viewController handleNewSession:session];
             }];
         }
     } else {
-        NSURL *loginURL = [auth loginURLForClientId:kClientId
-                                declaredRedirectURL:[NSURL URLWithString:kCallbackURL]
-                                             scopes:@[SPTAuthPlaylistModifyScope]];
+        NSURL *loginURL = [auth loginURLForClientId:kClientId declaredRedirectURL:[NSURL URLWithString:kCallbackURL]
+                                             scopes:@[SPTAuthPlaylistModifyScope, SPTAuthUserReadPrivateScope, SPTAuthPlaylistReadScope, SPTAuthStreamingScope, SPTAuthPlaylistReadPrivateScope]];
         
         double delayInSeconds = 0.1;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            // If you open a URL during application:didFinishLaunchingWithOptions:, you
-            // seem to get into a weird state.
             [[UIApplication sharedApplication] openURL:loginURL];
         });
     }
-
     return YES;
 }
 
@@ -84,5 +84,7 @@ ViewController *viewController;
     }
     return NO;
 }
+
+
 
 @end

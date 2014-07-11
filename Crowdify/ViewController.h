@@ -11,21 +11,14 @@
 #import "SpotifyButton.h"
 #import "AudioController.h"
 #import "SongCell.h"
-#import "InterfaceText.h"
 #import "RefresherView.h"
 #import "PageContentViewController.h"
 #import "AddSongTableViewController.h"
 
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIPageViewControllerDataSource> {
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     UITableView *playlistitems;
 }
 
--(void)handleNewSession:(SPTSession *)session;
--(void)addTheSession:(SPTSession *)session;
--(void)moveToPlaylistScreen;
--(IBAction)startWalkthrough:(id)sender;
-
-@property (strong, nonatomic) UIPageViewController *pageViewController;
-@property (strong, nonatomic) NSArray *pageImages;
+-(void)handleNewSession:(SPTSession *)session playlist:(SPTPartialPlaylist*)partialplaylist;
 
 @end

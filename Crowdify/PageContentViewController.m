@@ -35,11 +35,11 @@ static NSString * const kSessionUserDefaultsKey = @"SpotifySession";
     [super viewDidLoad];
     self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
     self.clickButton = [[SpotifyButton alloc] initWithFrame:CGRectMake(60.0, 370.0, 200.0, 40.0)];
-    [self.clickButton setTitle:@"Link Spotify" forState:UIControlStateNormal];
-    [self.clickButton addTarget:self action:@selector(linkspotify:) forControlEvents:UIControlEventTouchUpInside];
+    [self.clickButton setTitle:@"Please Wait..." forState:UIControlStateNormal];
+    [self.clickButton setEnabled:NO];
+    //[self.clickButton addTarget:self action:@selector(linkspotify:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.clickButton];
     self.view.backgroundColor = [UIColor blackColor];
-
 }
 
 /*-(IBAction)linkspotify:(id)sender {
@@ -92,14 +92,14 @@ static NSString * const kSessionUserDefaultsKey = @"SpotifySession";
         [self enableAudioPlaybackWithSession:session];
     };
     
-    /*
+ 
      STEP 2: Handle the callback from the authentication service. -[SPAuth -canHandleURL:withDeclaredRedirectURL:]
      helps us filter out URLs that aren't authentication URLs (i.e., URLs you use elsewhere in your application).
      
      Make the token swap endpoint URL matches your auth service URL.
-     */
+ 
     
-  /*  if ([[SPTAuth defaultInstance] canHandleURL:url withDeclaredRedirectURL:[NSURL URLWithString:kCallbackURL]]) {
+  if ([[SPTAuth defaultInstance] canHandleURL:url withDeclaredRedirectURL:[NSURL URLWithString:kCallbackURL]]) {
         [[SPTAuth defaultInstance] handleAuthCallbackWithTriggeredAuthURL:url
                                             tokenSwapServiceEndpointAtURL:[NSURL URLWithString:kTokenSwapServiceURL]
                                                                  callback:authCallback];
@@ -112,17 +112,10 @@ static NSString * const kSessionUserDefaultsKey = @"SpotifySession";
 
 
 -(void)enableAudioPlaybackWithSession:(SPTSession *)session {
-    NSLog(@"yo");
     NSData *sessionData = [NSKeyedArchiver archivedDataWithRootObject:session];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:sessionData forKey:kSessionUserDefaultsKey];
     [userDefaults synchronize];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

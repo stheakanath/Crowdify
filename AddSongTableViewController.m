@@ -78,7 +78,7 @@
    [self.searchDisplayController.searchResultsTableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.currentPlaylist addTracksToPlaylist:[self.searchData objectAtIndex:indexPath.row] withSession:self.session callback:^(NSError *error, SPTPlaylistSnapshot *playlist) {
         if(error){
-            NSLog(@"%@", error);
+            NSLog(@"Adding song to playlist gives error%@", error);
        }
     }];
 }

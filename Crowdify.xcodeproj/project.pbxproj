@@ -13,6 +13,7 @@
 		EB82E94E195CCD3A004D18DC /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB82E94D195CCD3A004D18DC /* AudioController.m */; };
 		EB82E953195CE829004D18DC /* pausebutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB82E951195CE829004D18DC /* pausebutton@2x.png */; };
 		EB82E954195CE829004D18DC /* playbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB82E952195CE829004D18DC /* playbutton@2x.png */; };
+		EB964C69196F15A0009E3E87 /* PlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB964C68196F15A0009E3E87 /* PlaylistViewController.m */; };
 		EB9F09291965D41900539BBE /* RefresherView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F09281965D41900539BBE /* RefresherView.m */; };
 		EBA944ED1958EB0E00F8B254 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA944EC1958EB0E00F8B254 /* Foundation.framework */; };
 		EBA944EF1958EB0E00F8B254 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA944EE1958EB0E00F8B254 /* CoreGraphics.framework */; };
@@ -58,6 +59,8 @@
 		EB82E94D195CCD3A004D18DC /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
 		EB82E951195CE829004D18DC /* pausebutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pausebutton@2x.png"; sourceTree = "<group>"; };
 		EB82E952195CE829004D18DC /* playbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playbutton@2x.png"; sourceTree = "<group>"; };
+		EB964C67196F15A0009E3E87 /* PlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistViewController.h; sourceTree = "<group>"; };
+		EB964C68196F15A0009E3E87 /* PlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistViewController.m; sourceTree = "<group>"; };
 		EB9F09271965D41900539BBE /* RefresherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefresherView.h; sourceTree = "<group>"; };
 		EB9F09281965D41900539BBE /* RefresherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefresherView.m; sourceTree = "<group>"; };
 		EBA944E91958EB0E00F8B254 /* Crowdify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crowdify.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +158,8 @@
 			children = (
 				EBA944FB1958EB0E00F8B254 /* AppDelegate.h */,
 				EBA944FC1958EB0E00F8B254 /* AppDelegate.m */,
+				EB964C67196F15A0009E3E87 /* PlaylistViewController.h */,
+				EB964C68196F15A0009E3E87 /* PlaylistViewController.m */,
 				EBA945011958EB0E00F8B254 /* ViewController.h */,
 				EBA945021958EB0E00F8B254 /* ViewController.m */,
 				EBF71E5A195B57280048DE07 /* Interface Files */,
@@ -337,6 +342,7 @@
 				EBD02AD8195CFC51004DB105 /* PageContentViewController.m in Sources */,
 				EB1C7454196CA2340049C1BB /* AddSongTableViewController.m in Sources */,
 				EB16EC61196CF2930028C0EE /* SongCell.m in Sources */,
+				EB964C69196F15A0009E3E87 /* PlaylistViewController.m in Sources */,
 				EB9F09291965D41900539BBE /* RefresherView.m in Sources */,
 				EBF71E59195B51A90048DE07 /* InterfaceText.m in Sources */,
 				EBA945031958EB0E00F8B254 /* ViewController.m in Sources */,
