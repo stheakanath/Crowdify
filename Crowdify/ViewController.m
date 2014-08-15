@@ -31,12 +31,19 @@
     [userDefaults synchronize];
     self.session = session;
     SPTPartialPlaylist *partial = partialplaylist;
+    NSLog(@"%@", partial.uri);
     [SPTRequest requestItemAtURI:partial.uri withSession:session callback:^(NSError *error, id object) {
-        if(object != NULL) {
+        if(!error) {
             SPTPlaylistSnapshot *playlist = (SPTPlaylistSnapshot*)object;
             NSLog(@"%@", playlist);
             _currentPlaylist = playlist;
-            [playlist.firstTrackPage requestNextPageWithSession:session callback:^(NSError *error, id object) {
+            [_items addObjectsFromArray:playlist.firstTrackPage.items];
+            self.navigationItem.title = [playlist.name uppercaseString];
+            [playlistitems reloadData];
+            [self.refresh removeFromSuperview];
+           /* [playlist.firstTrackPage requestNextPageWithSession:session callback:^(NSError *error, id object) {
+             //   id<SPTTrackProvider> songs = nil;
+             //   songs.tracksForPlayback = self.items;
                 [playlist.firstTrackPage pageByAppendingPage:object];
                 [_items addObjectsFromArray:playlist.firstTrackPage.items];
                 SPTListPage *incomplete = object;
@@ -44,13 +51,13 @@
                 self.navigationItem.title = [playlist.name uppercaseString];
                 [playlistitems reloadData];
                 [self.refresh removeFromSuperview];
-            }];
-            [self.refresh removeFromSuperview];
+            }];*/
         } else {
             NSLog(@"THIS ERROR %@", error);
         }
     }];
 }
+
 
 -(IBAction)addSong:(id)sender {
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: @"" style: UIBarButtonItemStyleBordered target: nil action: nil];
@@ -80,7 +87,7 @@
 -(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [playlistitems deselectRowAtIndexPath:indexPath animated:YES];
     if (self.trackPlayer == nil) {
-		self.trackPlayer = [[SPTTrackPlayer alloc] initWithCompanyName:@"Spotify" appName:@"SimplePlayer"];
+		self.trackPlayer = [SPTTrackPlayer new];
 		self.trackPlayer.delegate = self;
 	}
 	[self.trackPlayer enablePlaybackWithSession:_session callback:^(NSError *error) {

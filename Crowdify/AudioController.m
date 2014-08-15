@@ -22,11 +22,10 @@
 
 @end
 
-BOOL pauseorplay;
+BOOL isPlaying;
 CGRect screenRect;
 CGFloat screenWidth;
 CGFloat screenHeight;
-
 
 @implementation AudioController
 
@@ -56,7 +55,7 @@ CGFloat screenHeight;
 }
 
 - (void) createPlayButton {
-    pauseorplay = TRUE;
+    isPlaying = TRUE;
     _playbutton = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth-40, 10, 30, 30)];
     UIImage *btnImage = [UIImage imageNamed:@"pausebutton.png"];
     [_playbutton addTarget:self action:@selector(clickpause:) forControlEvents:UIControlEventTouchUpInside];
@@ -67,6 +66,11 @@ CGFloat screenHeight;
 #pragma mark - Track Player Methods
 
 -(void)trackPlayer:(SPTTrackPlayer *)player didStartPlaybackOfTrackAtIndex:(NSInteger)index ofProvider:(id <SPTTrackProvider>)provider {
+    if(isPlaying != TRUE) {
+        isPlaying = TRUE;
+        UIImage *btnImage = [UIImage imageNamed:@"pausebutton.png"];
+        [_playbutton setImage:btnImage forState:UIControlStateNormal];
+    }
     [self updateAudioPlayer];
 }
 
@@ -106,14 +110,14 @@ CGFloat screenHeight;
 #pragma mark - Actions
 
 - (IBAction)clickpause:(id)sender {
-    if(pauseorplay == TRUE) {
+    if(isPlaying == TRUE) {
         [_trackPlayer pausePlayback];
-        pauseorplay = false;
+        isPlaying = false;
         UIImage *btnImage = [UIImage imageNamed:@"playbutton.png"];
         [_playbutton setImage:btnImage forState:UIControlStateNormal];
     } else {
         [_trackPlayer resumePlayback];
-        pauseorplay = TRUE;
+        isPlaying = TRUE;
         UIImage *btnImage = [UIImage imageNamed:@"pausebutton.png"];
         [_playbutton setImage:btnImage forState:UIControlStateNormal];
     }

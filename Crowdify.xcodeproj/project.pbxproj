@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB0B1953196DC76A00F7677A /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0B1952196DC76A00F7677A /* Spotify.framework */; };
+		EB1362E1199EA68A003C6A0D /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1362E0199EA68A003C6A0D /* Spotify.framework */; };
 		EB16EC61196CF2930028C0EE /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16EC60196CF2930028C0EE /* SongCell.m */; };
 		EB1C7454196CA2340049C1BB /* AddSongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1C7453196CA2340049C1BB /* AddSongTableViewController.m */; };
 		EB82E94E195CCD3A004D18DC /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB82E94D195CCD3A004D18DC /* AudioController.m */; };
@@ -50,7 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB0B1952196DC76A00F7677A /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spotify.framework; path = Crowdify/Spotify.framework; sourceTree = "<group>"; };
+		EB1362E0199EA68A003C6A0D /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 		EB16EC5F196CF2930028C0EE /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
 		EB16EC60196CF2930028C0EE /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
 		EB1C7452196CA2340049C1BB /* AddSongTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddSongTableViewController.h; path = ../AddSongTableViewController.h; sourceTree = "<group>"; };
@@ -100,10 +100,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB0B1953196DC76A00F7677A /* Spotify.framework in Frameworks */,
 				EBF71E54195B49290048DE07 /* AVFoundation.framework in Frameworks */,
 				EBA944EF1958EB0E00F8B254 /* CoreGraphics.framework in Frameworks */,
 				EBA944F11958EB0E00F8B254 /* UIKit.framework in Frameworks */,
+				EB1362E1199EA68A003C6A0D /* Spotify.framework in Frameworks */,
 				EBA944ED1958EB0E00F8B254 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,7 +143,7 @@
 		EBA944EB1958EB0E00F8B254 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB0B1952196DC76A00F7677A /* Spotify.framework */,
+				EB1362E0199EA68A003C6A0D /* Spotify.framework */,
 				EBF71E53195B49290048DE07 /* AVFoundation.framework */,
 				EBA944EC1958EB0E00F8B254 /* Foundation.framework */,
 				EBA944EE1958EB0E00F8B254 /* CoreGraphics.framework */,
